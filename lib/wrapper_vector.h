@@ -8,11 +8,13 @@ class WrapperVector: public Wrapper {
         
         WrapperVector(std::vector<std::int32_t> v){
         };
-        void pushBack(std::int32_t  n) override {
-        };
+        std::vector<std::int32_t> vec;
+        void pushBack(std::int32_t  n) override; 
+        
         //da cancellare tutto il bodio dio ca
-        std::int32_t popBack() override {return 0;};
-        std::size_t size() const override {return 0u;};
-        std::vector<int32_t> sort() override{ std::vector<int32_t> v{};  return v; };
+        std::int32_t popBack() override;
+        std::size_t size() const override; 
+        void sort() override;
+        std::int32_t at(std::size_t i)override ;
 };
 #endif
