@@ -10,7 +10,7 @@ TEST_F(WrapperTest, sizeTest) {
 
 TEST_F(WrapperTest, sortTest) {
     std::size_t sizeBeforeSort = this->getWrapper()->size();
-    std::vector<int32_t> v = this->getWrapper()->sort();
+    this->getWrapper()->sort();
     std::size_t sizeAfterSort = this->getWrapper()->size();
     EXPECT_EQ(sizeBeforeSort, sizeAfterSort);
 }
