@@ -17,13 +17,18 @@ std::size_t WrapperVector::size()const{
 }
 
 void WrapperVector::sort() {
-    for (std::size_t i = 0; i< this->size(); i++){
-        for(std::size_t j = i; j< this->size(); j++){
-            if(this->at(i)>this->at(j)){
-                auto tmp = this->vec[i];
-                this->vec[i]=this->vec[j];
-                this->vec[j]=tmp;
-            } 
+    for (std::size_t i = 0, l = 0, r = this->size()-1u; i< this->size(); i++){
+        if(this->at(i)==0){
+            auto tmp = this->vec[i];
+            this->vec[i]=this->vec[l];
+            this->vec[l]=tmp;
+            l++;
+        }
+        else if(this->at(i)==1){
+            auto tmp = this->vec[i];
+            this->vec[i]=this->vec[r];
+            this->vec[r]=tmp;
+            r--;
         }
     }
 }
