@@ -28,7 +28,7 @@ TEST_F(WrapperTest, sortTest3) {
     std::vector<int32_t> p{-13,3,7,12}; 
     v->sort();
     v->sort();
-    for(std::int32_t i  = 0 ; i < p.size() ; i++){
+    for(std::size_t i  = 0 ; i < p.size() ; i++){
         EXPECT_EQ(v->at(i),p.at(i));
     }
 }
