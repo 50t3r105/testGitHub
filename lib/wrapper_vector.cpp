@@ -17,18 +17,33 @@ std::size_t WrapperVector::size()const{
 }
 
 void WrapperVector::sort() {
-    for (std::size_t i = 0, l = 0, r = this->size()-1u; i< this->size(); i++){
-        if(this->at(i)==0){
-            auto tmp = this->vec[i];
-            this->vec[i]=this->vec[l];
-            this->vec[l]=tmp;
-            l++;
+    bool inc=false;
+    auto tmp = vec.at(0);
+    for (std::size_t i = 0, l = 0, r = this->size()-1u; i< r;){
+        inc = true;
+        auto &vec = this->vec;
+        if (vec.at(i)==0){
+            tmp = vec.at(i);
+            vec.at(i) = vec.at(l);
+            vec.at(l) = tmp;
+            inc = false;
+            if (l<i)
+                l++;
         }
-        else if(this->at(i)==1){
-            auto tmp = this->vec[i];
-            this->vec[i]=this->vec[r];
-            this->vec[r]=tmp;
+        else if (vec.at(r)==2){
             r--;
+            inc = false;
+        }
+        else if (vec.at(i)==2){
+            tmp = vec.at(i);
+            vec.at(i) = vec.at(r);
+            vec.at(r) = tmp;
+            inc = false;
+            r--;
+        }
+        if (inc || l>=i){
+        
+            i++;
         }
     }
 }
@@ -36,3 +51,5 @@ void WrapperVector::sort() {
 std::int32_t WrapperVector::at(std::size_t i) {
     return this->vec.at(i);
 }
+
+
