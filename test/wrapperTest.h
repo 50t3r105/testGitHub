@@ -8,9 +8,11 @@
 class WrapperTest: public ::testing::Test{
     protected:
         std::shared_ptr<Wrapper> v;
+        std::vector<std::int32_t> p{};
         WrapperTest(){};
         void SetUp() override;
         std::shared_ptr<Wrapper>& getWrapper();
+        void vectorSetup(std::vector<std::int32_t> input);
 };
 
 
