@@ -19,7 +19,7 @@ TEST_F(WrapperTest, sortTest1) {
 TEST_F(WrapperTest, sortTest2) {
     std::vector<int32_t> p{0,1,1,2}; 
     v->sort();
-    for(std::int32_t i  = 0 ; i < p.size() ; i++){
+    for(std::size_t i  = 0 ; i < p.size() ; i++){
         EXPECT_EQ(v->at(i),p.at(i));
     }
 }
