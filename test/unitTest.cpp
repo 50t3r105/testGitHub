@@ -35,3 +35,23 @@ TEST_F(WrapperTest, sortTest3) {
         EXPECT_EQ(v->at(i),p.at(i));
     }
 }
+
+
+TEST_F(WrapperTest, fiveBitTest) {
+    
+    for(std::int32_t a=0; a< 3; a++){
+        for(std::int32_t b=0; b< 3; b++){
+            for(std::int32_t c=0; c< 3; c++){ 
+                for(std::int32_t d=0; d< 3; d++){
+                    for(std::int32_t e=0; e< 3; e++){
+                        std::vector<std::int32_t> w{a,b,c,d,e};
+                        vectorSetup(w);
+                        for(std::size_t i  = 0 ; i < p.size() ; i++){
+                            ASSERT_EQ(v->at(i),p.at(i));
+                        }
+                    } 
+                } 
+            } 
+        } 
+    } 
+}

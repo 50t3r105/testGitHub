@@ -18,4 +18,10 @@ void WrapperTest::vectorSetup(std::vector<std::int32_t> input){
 std::shared_ptr<Wrapper>& WrapperTest::getWrapper(){
     
     return this->v;
-};
+}
+void WrapperTest::changeVector(std::vector<int32_t> input){
+    this->v->replace(input);
+    this->v->sort();
+    this->p = input;
+    std::sort(this->p.begin(), this->p.end());
+} 

@@ -13,6 +13,7 @@ class WrapperTest: public ::testing::Test{
         void SetUp() override;
         std::shared_ptr<Wrapper>& getWrapper();
         void vectorSetup(std::vector<std::int32_t> input);
+        void changeVector(std::vector<int32_t> input);
 };
 
 

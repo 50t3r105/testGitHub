@@ -16,6 +16,10 @@ std::size_t WrapperVector::size()const{
     return this->vec.size();
 }
 
+void WrapperVector::replace(std::vector<int32_t> input){
+    this->vec = input;
+
+}
 void WrapperVector::sort() {
     bool inc=false;
     auto tmp = vec.at(0);

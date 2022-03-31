@@ -8,9 +8,10 @@ class WrapperVector: public Wrapper {
         
         WrapperVector(std::vector<std::int32_t> v){
         };
+
         std::vector<std::int32_t> vec;
         void pushBack(std::int32_t  n) override; 
-        
+        void replace(std::vector<int32_t> input)override;
         //da cancellare tutto il bodio dio ca
         std::int32_t popBack() override;
         std::size_t size() const override; 
